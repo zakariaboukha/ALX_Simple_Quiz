@@ -1,23 +1,22 @@
+// Function to check the user's answer
 function checkAnswer() {
-    const correctAnswer = "4"; // The correct answer
+    // The correct answer
+    const correctAnswer = "4";
     
     // Get the user's selected answer
-    const userAnswer = document.querySelector('input[name="quiz"]:checked');
+    const userAnswer = document.querySelector('input[name="quiz"]:checked')?.value;
     
-    if (userAnswer) {
-        // Compare user answer with the correct answer
-        const feedbackElement = document.getElementById('feedback');
-        if (userAnswer.value === correctAnswer) {
-            feedbackElement.textContent = "Correct! Well done.";
-            feedbackElement.style.color = "green";
-        } else {
-            feedbackElement.textContent = "That's incorrect. Try again!";
-            feedbackElement.style.color = "red";
-        }
+    // Get the feedback element
+    const feedback = document.getElementById("feedback");
+    
+    // Check if userAnswer is correct and display feedback
+    if (userAnswer === correctAnswer) {
+        feedback.textContent = "Correct! Well done.";
     } else {
-        alert("Please select an answer before submitting.");
+        feedback.textContent = "That's incorrect. Try again!";
     }
 }
 
-// Add event listener to submit button
-document.getElementById('submit-answer').addEventListener('click', checkAnswer);
+// Add event listener to the submit button
+document.getElementById("submit-answer").addEventListener("click", checkAnswer);
+
