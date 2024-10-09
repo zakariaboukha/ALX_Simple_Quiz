@@ -1,31 +1,54 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+// Function to perform addition
+function add(number1, number2) {
+    return number1 + number2;
 }
 
-#calculator-container {
-    text-align: center;
+// Function to perform subtraction
+function subtract(number1, number2) {
+    return number1 - number2;
 }
 
-input[type="number"] {
-    margin: 10px;
-    padding: 10px;
-    width: 200px;
-    font-size: 16px;
+// Function to perform multiplication
+function multiply(number1, number2) {
+    return number1 * number2;
 }
 
-button {
-    padding: 10px 20px;
-    margin: 5px;
-    font-size: 16px;
-    cursor: pointer;
+// Function to perform division
+function divide(number1, number2) {
+    if (number2 === 0) {
+        return 'Error: Division by zero';
+    }
+    return number1 / number2;
 }
 
-#result {
-    margin-top: 20px;
-    font-size: 20px;
-}
+// Add event listener for addition
+document.getElementById('add').addEventListener('click', function() {
+    const number1 = parseFloat(document.getElementById('number1').value) || 0;
+    const number2 = parseFloat(document.getElementById('number2').value) || 0;
+    const result = add(number1, number2);
+    document.getElementById('calculation-result').textContent = result;
+});
+
+// Add event listener for subtraction
+document.getElementById('subtract').addEventListener('click', function() {
+    const number1 = parseFloat(document.getElementById('number1').value) || 0;
+    const number2 = parseFloat(document.getElementById('number2').value) || 0;
+    const result = subtract(number1, number2);
+    document.getElementById('calculation-result').textContent = result;
+});
+
+// Add event listener for multiplication
+document.getElementById('multiply').addEventListener('click', function() {
+    const number1 = parseFloat(document.getElementById('number1').value) || 0;
+    const number2 = parseFloat(document.getElementById('number2').value) || 0;
+    const result = multiply(number1, number2);
+    document.getElementById('calculation-result').textContent = result;
+});
+
+// Add event listener for division
+document.getElementById('divide').addEventListener('click', function() {
+    const number1 = parseFloat(document.getElementById('number1').value) || 0;
+    const number2 = parseFloat(document.getElementById('number2').value) || 0;
+    const result = divide(number1, number2);
+    document.getElementById('calculation-result').textContent = result;
+});
