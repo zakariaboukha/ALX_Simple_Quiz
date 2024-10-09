@@ -7,7 +7,7 @@ function checkAnswer() {
     if (userAnswer) {
         // Compare user answer with the correct answer
         const feedbackElement = document.getElementById('feedback');
-        if (userAnswer.value === correctAnswer) {
+        if (userAnswer === correctAnswer) {
             feedbackElement.textContent = "Correct! Well done.";
             feedbackElement.style.color = "green";
         } else {
